@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind:
+metadata:
+  name:
+  labels:
+    app:
+spec:
+  replicas:
+  serviceName:
+  selector:
+    matchLabels:
+      app:
+  template:
+    metadata:
+      labels:
+        app:
+    spec:
+      containers:
+      - name:
+        image:
+        ports:
+        - containerPort:
+---
+apiVersion:
+kind: Service
+metadata:
+  name:
+  labels:
+    app:
+spec:
+  ports:
+  - port:
+  clusterIP: None
+  selector:
+    app:
