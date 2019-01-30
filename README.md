@@ -24,10 +24,13 @@ Use the templates by filling in relevant values, and `apply`ing them on to your 
 
 In order to access the applications we need an **Ingress Controller**, which is easily installed with `Helm` (look for `helm/` in the project).
 Once the ingress controller is installed, we need to utilize ingress configurations, which you'll also find templates for in `/templates`.
-Since we don't have a DNS server at the moment, we'll use our **own** machines as the DNS by setting the next entries:
+Since we don't have a DNS server at the moment, we'll use an external service called xip.io like so:
 ```
-echo "<strigo host ip> vote" >> /etc/hosts
-echo "<strigo host ip> result" >> /etc/hosts
+# These entries should be the values of the ingress hosts
+# They should be then accessible from the browser
+#
+vote.<strigo IP>.xip.io
+result.<strigo IP>.xip.io
 ```
 Once set, you'll be able to access `vote` and `result` directly from the browser like so: `http://vote:30001`
 (*30001 is the port set for the ingress controller*)
