@@ -41,7 +41,7 @@ Once set, you'll be able to access `vote` and `result` directly from the browser
 Name | Image | Command | Port | Kind | URL | Service | Ingress
 --- | --- | --- | --- | --- | --- | --- | ---
 vote | prodopsio/vote:latest | python app.py | 80 | ReplicaSet | vote.<strigo IP>.xip.io | vote:80 | V
-result | prodopsio/vote:result | nodemon server.js | 80 & 5858 | ReplicaSet | result.<strigo IP>.xip.io | result:80 | V
+result | prodopsio/vote:result | nodemon server.js | 5001 & 5858 | ReplicaSet | result.<strigo IP>.xip.io | result:80 | V
 worker | prodopsio/vote:worker | - | - | ReplicaSet | - | - | -
 redis | redis:alpine | - | 6379 | StatefulSet | - | redis:6379 | -
 db | postgres:9.4 | - | 5432 | StatefulSet | - | db:5432 | -
